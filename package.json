@@ -1,0 +1,50 @@
+{
+  "name": "electron-react-typescript",
+  "version": "1.0.0",
+  "description": "Bolerplate criada por leydev",
+  "main": "build/electron.js",
+  "build": {
+    "appId": "br.com.leydev",
+    "extends": null,
+    "files": [
+      "build/**/*"
+    ]
+  },
+  "scripts": {
+    "start": "webpack --mode development --config webpack.electron.js && webpack-dev-server --mode development --config webpack.react.js",
+    "build": "webpack --mode production --config webpack.electron.js && webpack --mode production --config webpack.react.js",
+    "build:linux": "npm run build && electron-builder build --linux appimage",
+    "postinstall": "electron-builder install-app-deps",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leydev",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@babel/runtime": "^7.11.2",
+    "@types/react": "^16.9.52",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "babel-loader": "^8.1.0",
+    "electron": "^10.1.3",
+    "electron-builder": "^22.9.1",
+    "eslint": "^7.11.0",
+    "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "html-webpack-plugin": "^4.5.0",
+    "ts-loader": "^8.0.5",
+    "typescript": "^4.0.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
