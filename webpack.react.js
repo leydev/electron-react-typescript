@@ -12,6 +12,7 @@ module.exports = {
     target: "electron-renderer",
     devServer: {
         contentBase: './build/renderer',
+        historyApiFallback: true,
         port: 8001,
         after: () => {
             let chrome = spawn("./node_modules/electron/dist/electron", ["build/electron.js"], {
